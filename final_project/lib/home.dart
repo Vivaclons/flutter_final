@@ -12,7 +12,7 @@ class _HomeAppState extends State<HomeApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[500],
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.blueGrey[600],
         title: const Text(
@@ -40,8 +40,18 @@ class _HomeAppState extends State<HomeApp> {
         builder: (BuildContext context, BuyApp value, Widget child) {
           return ListView(
             children: <Widget>[
-              title(value, "name", "price"),
-              title(value, "name", "price"),
+              tile(value, "Tree", "200"),
+              tile(value, "Water", "100"),
+              tile(value, "Lead", "200"),
+              tile(value, "Iron", "1000"),
+              tile(value, "Tree", "200"),
+              tile(value, "Water", "100"),
+              tile(value, "Lead", "200"),
+              tile(value, "Iron", "1000"),
+              tile(value, "Tree", "200"),
+              tile(value, "Water", "100"),
+              tile(value, "Lead", "200"),
+              tile(value, "Iron", "1000"),
             ],
           );
         },
@@ -49,21 +59,21 @@ class _HomeAppState extends State<HomeApp> {
     );
   }
 
-  ListTile title(BuyApp buyApp, String name, String price) {
+  ListTile tile(BuyApp buyApp, String pName, String price) {
     return ListTile(
-      title: Text(name),
-      leading: CircleAvatar(
-        child: Text(price),
+      title: Text(price),
+      leading: Text(
+        pName,
       ),
       trailing: IconButton(
-        icon: (buyApp.basketAdd.contains(name))
+        icon: (buyApp.basketAdd.contains(pName))
             ? Icon(Icons.done_all)
             : Icon(Icons.exposure_plus_1),
         onPressed: () {
-          if (buyApp.basketAdd.contains(name)) {
-            buyApp.removeProduct(name);
+          if (!buyApp.basketAdd.contains(pName)) {
+            buyApp.addProduct(pName);
           } else {
-            buyApp.addProduct(name);
+            buyApp.removeProduct(pName);
           }
         },
       ),

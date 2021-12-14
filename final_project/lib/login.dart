@@ -65,7 +65,7 @@ class LoginApp extends StatelessWidget {
                 ),
                 RaisedButton(
                   padding: EdgeInsets.fromLTRB(45, 15, 45, 15),
-                  color: Colors.lightBlue[900],
+                  color: Colors.blueGrey[600],
                   textColor: Colors.white,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),

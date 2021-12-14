@@ -1,12 +1,10 @@
-import 'package:final_project/basket.dart';
 import 'package:final_project/buy.dart';
-import 'package:final_project/home.dart';
 import 'package:final_project/login.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 void main() => runApp(
-      MyApp(
+      const MyApp(
           // initialRoute: '/',
           // routes: {
           //   '/basket': (context) => Basket(),
@@ -16,6 +14,8 @@ void main() => runApp(
     );
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key key}) : super(key: key);
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
