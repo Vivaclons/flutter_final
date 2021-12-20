@@ -11,11 +11,11 @@ class Basket extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.blueGrey[600],
         title: Text("Basket"),
-        centerTitle: true,
       ),
       body: Consumer<BuyApp>(
         builder: (BuildContext context, BuyApp value, Widget child) {
           return ListView.builder(
+            padding: const EdgeInsets.all(8),
             itemCount: value.basketAdd.length + 1,
             itemBuilder: (context, index) {
               if (index == 0) {

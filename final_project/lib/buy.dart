@@ -9,6 +9,11 @@ class BuyApp extends ChangeNotifier {
     notifyListeners();
   }
 
+  price(String price) {
+    _basketAdd.add(price);
+    notifyListeners();
+  }
+
   removeProduct(String name) {
     _basketAdd.removeWhere((element) => element == name);
     notifyListeners();

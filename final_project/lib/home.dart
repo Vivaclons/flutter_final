@@ -39,19 +39,20 @@ class _HomeAppState extends State<HomeApp> {
       body: Consumer<BuyApp>(
         builder: (BuildContext context, BuyApp value, Widget child) {
           return ListView(
+            padding: const EdgeInsets.all(8),
             children: <Widget>[
-              tile(value, "Tree", "200"),
-              tile(value, "Water", "100"),
-              tile(value, "Lead", "200"),
-              tile(value, "Iron", "1000"),
-              tile(value, "Tree", "200"),
-              tile(value, "Water", "100"),
-              tile(value, "Lead", "200"),
-              tile(value, "Iron", "1000"),
-              tile(value, "Tree", "200"),
-              tile(value, "Water", "100"),
-              tile(value, "Lead", "200"),
-              tile(value, "Iron", "1000"),
+              tile(value, "Apple", "100tg", "this a description of Apple"),
+              tile(value, "Samsung", "100tg", "this a description of Samsung"),
+              tile(value, "Sony", "200tg", "this a description of Sony"),
+              tile(value, "Tesla", "1000tg", "this a description of Tesla"),
+              tile(value, "Apple", "200tg", "this a description of Apple"),
+              tile(value, "Apple", "100tg", "this a description of Apple"),
+              tile(value, "Tesla", "200tg", "this a description of Tesla"),
+              tile(value, "Sony", "1000tg", "this a description of Sony"),
+              tile(value, "Tesla", "200tg", "this a description of Tesla"),
+              tile(value, "Samsung", "100tg", "this a description of Samsung"),
+              tile(value, "Samsung", "200tg", "this a description of Samsung"),
+              tile(value, "Sony", "1000tg", "this a description of Sony"),
             ],
           );
         },
@@ -59,11 +60,22 @@ class _HomeAppState extends State<HomeApp> {
     );
   }
 
-  ListTile tile(BuyApp buyApp, String pName, String price) {
+  ListTile tile(BuyApp buyApp, String pName, String price, String des) {
     return ListTile(
       title: Text(price),
-      leading: Text(
-        pName,
+      subtitle: Text(des),
+      leading: CircleAvatar(
+        radius: 30.0,
+        backgroundImage: AssetImage("images/$pName.png"),
+        child: Text(
+          pName,
+          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        ),
+        //Text(
+        //   pName,
+        //   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        // ),
+        //
       ),
       trailing: IconButton(
         icon: (buyApp.basketAdd.contains(pName))
