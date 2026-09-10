@@ -1,11 +1,11 @@
 {
-    "name": "final_project",
-    "short_name": "final_project",
+    "name": "Vivaclons Store",
+    "short_name": "Vivaclons",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Vivaclons Store — a small Flutter shop demo.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
